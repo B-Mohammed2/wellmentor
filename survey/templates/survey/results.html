@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+<!--  -->
+{% block content %}
+
+<div>
+    <h1>Results</h1>
+    <p id='score'></score>
+</div>
+
+
+{% endblock %}
+
+{% block postloadjs %} {{ block.super }}
+<script type="text/javascript" src="{% static 'js/results.js' %}"></script>
+{% endblock %}

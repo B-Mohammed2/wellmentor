@@ -71,8 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function nextQuestion(questions, index) {
   if (questions.length <= index) {
-    console.log("fire");
-    display.innerHTML = `Score = ${SCORE}`;
+    const stateObject = { score: SCORE };
+    window.history.pushState(stateObject, null, "survey/results");
+    window.location.href = `results`;
+
     return;
   }
 
