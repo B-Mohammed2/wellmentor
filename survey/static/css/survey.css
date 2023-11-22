@@ -1,0 +1,53 @@
+/* STYLING THE SURVEY ELEMENTS */
+
+#question {
+  color: whitesmoke;
+  max-width: 450px;
+  background-color: rgba(12, 74, 110);
+  padding: 1rem;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+#question h2 {
+  line-height: 2ch;
+  font-size: x-large;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.3s ease-out forwards;
+}
+
+#answers button {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+#answers button:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+#answers button:nth-child(1) {
+  background: var(--clr-red);
+}
+#answers button:nth-child(2) {
+  background: var(--clr-yellow);
+}
+#answers button:nth-child(3) {
+  background: var(--clr-blue);
+}
+#answers button:nth-child(4) {
+  background: var(--clr-green);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
