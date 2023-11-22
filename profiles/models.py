@@ -8,6 +8,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class UserProfile(models.Model):
+
+    """USER MODEL FOR SIGNED UP USERS, THIS EXTENDS THE ALL AUTH USER AND ADDS PROFILE INFO"""
+
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
     physical_health = models.DecimalField(

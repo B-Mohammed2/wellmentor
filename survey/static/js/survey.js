@@ -1,3 +1,5 @@
+// DUMMY CODE FOR SURVEY
+
 const DATA = [
   {
     question:
