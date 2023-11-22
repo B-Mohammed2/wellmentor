@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/survey.css' %}" />
+{% endblock %}
+<!--  -->
+{% block content %}
+
+<div id="display">
+  <h2 id="question">QUESTION GOES HERE</h2>
+  <div id="answers">
+    <button class="btn" value="1">
+      <i class="fa-solid fa-face-sad-cry"></i>
+    </button>
+    <button class="btn" value="2">
+      <i class="fa-regular fa-face-sad-tear"></i>
+    </button>
+    <button class="btn" value="3">
+      <i class="fa-regular fa-face-smile"></i>
+    </button>
+    <button class="btn" value="4">
+      <i class="fa-regular fa-face-grin-squint-tears"></i>
+    </button>
+  </div>
+</div>
+
+{% endblock %} {% block postloadjs %} {{ block.super }}
+<script type="text/javascript" src="{% static 'js/survey.js' %}"></script>
+{% endblock %}

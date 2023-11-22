@@ -1,0 +1,36 @@
+#question {
+  color: whitesmoke;
+  font-size: x-large;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 1rem;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+#answers button {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+#answers button:hover {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+
+#answers button:nth-child(1) {
+  background: var(--clr-red);
+}
+#answers button:nth-child(2) {
+  background: var(--clr-yellow);
+}
+#answers button:nth-child(3) {
+  background: var(--clr-blue);
+}
+#answers button:nth-child(4) {
+  background: var(--clr-green);
+}
