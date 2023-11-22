@@ -77,7 +77,8 @@ async function nextQuestion(questions, index) {
   }
 
   console.log("second ");
-  questionText.innerHTML = questions[index].question;
+  questionText.innerHTML = `<h2>${questions[index].question}</h2>`;
+
   TOTALINDEX++;
 }
 
