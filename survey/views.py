@@ -11,7 +11,7 @@ class SurveyView(generic.View):
 
 
 class SurveyResultsView(generic.View):
-    """BASIC VIEW FOR SURVEY RESULTS PAGE"""
+  """BASIC VIEW FOR SURVEY RESULTS PAGE"""
 
   def get(self, request, *args, **kwargs):
         return render(request, "survey/results.html")
