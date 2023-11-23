@@ -7,6 +7,16 @@ const score = stateObject ? stateObject.score : null;
 document.addEventListener("DOMContentLoaded", () => {
   const scoreElement = document.getElementById("score");
 
-  console.log(score);
-  scoreElement.innerHTML = score;
+  const html = `
+  <ul style="list-style: none">
+      <li>physical : ${score.physical}</li>
+      <li>depression : ${score.depression}</li>
+      <li>relationships : ${score.relationships}</li>
+      <li>mental : ${score.mental}</li>
+      <li>anxiety : ${score.anxiety}</li>
+      <li>professional : ${score.professional}</li>
+
+    </ul>`;
+
+  scoreElement.innerHTML = html;
 });
