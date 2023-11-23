@@ -1,22 +1,46 @@
 <!-- MODIFY THIS FOR TEMPLATE FOR SURVEY RESULTS PAGE -->
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %} {% load static %} 
 
 
-{% block extra_title %}Results{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/survey.css' %}" />
+{% endblock %}
+{% block extra_title %}Results{%endblock %}
 
 <!--  -->
 {% block content %}
 
 <div>
-    <h1>Results</h1>
-    <div id='score'>
+  <h1>Results</h1>
+  <div id="score" class="grid-container">
+    <div class="card">
+      <i class="fa-solid fa-dumbbell" style="color: green"></i>
+      <span id="physical"></span>
     </div>
-        
+    <div class="card">
+      <i class="fa-solid fa-user-group" style="color: red"></i>
+      <span id="relationships"></span>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-cloud-rain" style="color: blue"></i>
+      <span id="depression"></span>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-bolt-lightning" style="color: yellow"></i>
+      <span id="anxiety"></span>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-user-tie" style="color: purple"></i>
+      <span id="professional"></span>
+    </div>
+    <div class="card">
+      <i class="fa-solid fa-brain" style="color: pink"></i>
+      <span id="mental"></span>
+    </div>
+  </div>
 </div>
 
-
-{% endblock %}
+{% endblock %} 
 
 {% block postloadjs %} {{ block.super }}
 <script type="text/javascript" src="{% static 'js/results.js' %}"></script>

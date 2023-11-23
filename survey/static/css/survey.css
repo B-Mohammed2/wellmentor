@@ -70,3 +70,13 @@
   font-size: x-large;
   background: var(--clr-blue);
 }
+
+.card {
+  padding: 3rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  text-transform: uppercase;
+  font-size: x-large;
+  background: whitesmoke;
+}
