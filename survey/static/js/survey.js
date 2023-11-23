@@ -1,7 +1,7 @@
 // DUMMY CODE FOR SURVEY
 
-import data from '../js/questions.json' assert { type: 'json'}
-const DATA = data
+import data from "../js/questions.json" assert { type: "json" };
+const DATA = data;
 
 const questionText = document.getElementById("question");
 const answersText = document.getElementById("answers");
@@ -24,25 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
 async function nextQuestion(data, index) {
   if (data.length <= index) {
     const stateObject = { score: SCORE };
-    window.history.pushState(stateObject, null, "survey/results");
-    window.location.href = `results`;
+    window.history.pushState(stateObject, null, "/results");
+    window.location.href = `/results`;
 
     return;
   }
 
-  console.log("second ");
   questionText.innerHTML = `<h2>${data[index].question}</h2>`;
 
   while (answersText.firstChild) {
-    answersText.removeChild(answersText.firstChild)
+    answersText.removeChild(answersText.firstChild);
   }
   const answersCount = data[index].answers.length;
-  const scoreRange = 100/answersCount;
+  const scoreRange = 100 / answersCount;
 
-  for (var n=0; n<answersCount;n++) {
+  for (var n = 0; n < answersCount; n++) {
     var button = document.createElement("button");
     button.innerHTML = data[index].answers[n];
-    button.value = scoreRange*(n);
+    button.value = scoreRange * n;
     button.classList.add("btn");
     button.addEventListener("click", (e) => storeAnswer(e));
     answersText.appendChild(button);
