@@ -30,12 +30,15 @@
       {% include 'includes/navbar.html' %}
     </header>
     <main>
-    {% block content %} {% endblock %}
+      {% block content %} {% endblock %}
     </main>
 
 
     {% block postloadjs %}
     {% endblock %}
+    <footer>
+      {% include 'includes/footer.html' %}
+    </footer>
   </body>
   
 </html>
