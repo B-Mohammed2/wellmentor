@@ -80,3 +80,10 @@
   font-size: x-large;
   background: whitesmoke;
 }
+
+
+/* hidden form */
+
+.hidden {
+  display: none;
+}

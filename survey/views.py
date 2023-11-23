@@ -1,13 +1,18 @@
 # pylint: disable=E1101
 from django.shortcuts import render
 from django.views import generic
+from profiles.forms import UserProfileForm
 
 # Create your views here.
 class SurveyView(generic.View):
   """BASIC VIEW FOR SURVEY PAGE"""
 
   def get(self, request, *args, **kwargs):
-        return render(request, "survey/survey.html")
+        form = UserProfileForm()
+        context = {
+            'form': form
+        }
+        return render(request, "survey/survey.html", context)
 
 
 class SurveyResultsView(generic.View):
