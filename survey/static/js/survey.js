@@ -1,6 +1,5 @@
 // DUMMY CODE FOR SURVEY
-
-import data from "../js/questions.json" assert { type: "json" };
+import data from "../js/test_questions.json" assert { type: "json" };
 const DATA = data;
 
 const questionText = document.getElementById("question");
@@ -10,12 +9,14 @@ const display = document.getElementById("display");
 const score = document.querySelector("score");
 
 let TOTALINDEX = 0;
-let SCORE = 0;
-
-//   const html = `  <button class="btn">${questions[index].answers[0]}</button>
-//           <button class="btn">${questions[index].answers[1]}</button>
-//           <button class="btn">${questions[index].answers[2]}</button>
-//           <button class="btn">${questions[index].answers[3]}</button>`;
+let SCORE = {
+  physical: 0,
+  depression: 0,
+  relationships: 0,
+  mental: 0,
+  professional: 0,
+  anxiety: 0,
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   nextQuestion(DATA, TOTALINDEX);
@@ -32,29 +33,31 @@ async function nextQuestion(data, index) {
 
   questionText.innerHTML = `<h2>${data[index].question}</h2>`;
 
-  while (answersText.firstChild) {
-    answersText.removeChild(answersText.firstChild);
-  }
+  answersText.innerHTML = "";
+
   const answersCount = data[index].answers.length;
   const scoreRange = 100 / answersCount;
 
   for (var n = 0; n < answersCount; n++) {
     var button = document.createElement("button");
+
+    const { category } = data[index];
     button.innerHTML = data[index].answers[n];
-    button.value = scoreRange * n;
+
+    // Updated to reach 100 if max answer - 5 possible answers each
+    button.value = 25 * n;
     button.classList.add("btn");
-    button.addEventListener("click", (e) => storeAnswer(e));
+    button.addEventListener("click", (e) => storeAnswer(e, category));
     answersText.appendChild(button);
   }
 
   TOTALINDEX++;
 }
 
-function storeAnswer(e) {
+function storeAnswer(e, category) {
   const buttonValue = e.target.closest("button").value;
-  console.log(buttonValue);
 
-  SCORE += +buttonValue;
+  SCORE[category] += +buttonValue;
 
   nextQuestion(DATA, TOTALINDEX);
 }
