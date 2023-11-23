@@ -1,0 +1,11 @@
+<!-- MODIFY THIS FOR THE HOME PAGE - WILL LATER CHANGE TO PROFILE PAGE -->
+
+{% extends 'base.html' %}
+<!--  -->
+{% block content %}
+<h1>Home Page</h1>
+
+  <a href="{% url 'survey' %}">Survey</a>
+  <a href="{% url 'about_us' %}">About us</a>
+</ul>
+{% endblock %}

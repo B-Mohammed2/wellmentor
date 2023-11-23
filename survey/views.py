@@ -22,3 +22,10 @@ class AboutUsView(generic.View):
 
   def get(self, request, *args, **kwargs):
         return render(request, "survey/about_us.html")
+
+
+class HomePageView(generic.View):
+  """BASIC VIEW FOR SURVEY PAGE"""
+
+  def get(self, request, *args, **kwargs):
+        return render(request, "survey/home.html")
