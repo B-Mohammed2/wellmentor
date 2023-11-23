@@ -7,8 +7,9 @@ from .models import UserProfile
 class ProfileInline(admin.StackedInline):
 
     model = UserProfile
-    readonly_fields = ('physical_health', 'emotional_health',
-    'social_health', 'professional_health')
+    readonly_fields = ('physical_health', 'depression_level',
+    'relationship_health', 'mental_health_awareness', 'professional_health',
+    'anxiety_level')
 
 
 class UserAdmin(admin.ModelAdmin):
