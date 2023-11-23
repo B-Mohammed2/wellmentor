@@ -1,57 +1,7 @@
 // DUMMY CODE FOR SURVEY
 
-const DATA = [
-  {
-    question:
-      "How would you rate your overall emotional well-being right now on a scale of 1 to 10?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "How often do you feel overwhelmed or stressed in a typical week, and how intense are those feelings?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "On a scale of 1 to 10, how would you rate the quality of your sleep in the past month?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "Are there specific situations contributing to anxiety or depression for you?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "How comfortable are you discussing your emotions and mental health on a scale of 1 to 10?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "How satisfied are you with your ability to cope with daily challenges, 1 to 10?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "On a scale of 1 to 10, how fulfilled do you feel in your personal and professional life?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "How often do you engage in activities bringing joy or relaxation, and how impactful are they?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "On a scale of 1 to 10, how well do you understand and accept your own emotions and thoughts?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-  {
-    question:
-      "Have you noticed any recent changes in mood or behavior, and how would you rate their impact on your daily life?",
-    answers: ["ham", "cheese", "bacon", "eggs"],
-  },
-];
+import data from '../js/questions.json' assert { type: 'json'}
+const DATA = data
 
 const questionText = document.getElementById("question");
 const answersText = document.getElementById("answers");
