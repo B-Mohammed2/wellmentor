@@ -42,6 +42,9 @@ async function nextQuestion(data, index) {
   for (var n=0; n<answersCount;n++) {
     var button = document.createElement("button");
     button.innerHTML = data[index].answers[n];
+    button.value = scoreRange*(n);
+    button.classList.add("btn");
+    button.addEventListener("click", (e) => storeAnswer(e));
     answersText.appendChild(button);
   }
 
