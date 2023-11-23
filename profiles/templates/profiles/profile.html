@@ -1,0 +1,18 @@
+<!-- MODIFY THIS FOR THE HOME PAGE - WILL LATER CHANGE TO PROFILE PAGE -->
+
+{% extends 'base.html' %}
+<!--  -->
+{% block content %}
+<h1>User Profile</h1>
+<ul>
+  <li>{{ user_profile.user.username }}</li>
+  <li>{{ user_profile.bio }}</li>
+  <li>{{ user_profile.physical_health }}</li>
+  <li>{{ user_profile.emotional_health }}</li>
+  <li>{{ user_profile.social_health }}</li>
+  <li>{{ user_profile.professional_health }}</li>
+
+  <a href="{% url 'survey' %}">Survey</a>
+  <a href="{% url 'about_us' %}">About us</a>
+</ul>
+{% endblock %}
