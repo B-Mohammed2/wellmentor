@@ -1,20 +1,35 @@
 <!-- MODIFY THIS FOR THE NAV BAR STYLING -->
-
 <nav id="main-nav">
   <div>
     Logo
-    <img src="" alt="logo" />
+    <img src="" alt="logo"/>
   </div>
   <ul>
-    <li>Home</li>
-    <li>Sign In</li>
-    {% if user.is_authenticated %}
     <li>
-      <a href="{% url 'profile' %}"
-        ><i class="fa-solid fa-user"></i> {{ user.username }}</a
-      >
+      <a href="{% url 'home' %}">
+        Home
+      </a>
     </li>
+
+    <li>
+      <a href="{% url 'about_us' %}">
+        About Us
+      </a>
+    </li>
+
+    {% if user.is_authenticated %}
+      <li>
+        <a href="{% url 'profile' %}"
+          ><i class="fa-solid fa-user"></i> Hello {{ user.username }}</a
+        >
+        <a href="{% url 'account_logout' %}">Logout</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="{% url 'account_login' %}">Login</a>
+      </li>
     {% endif %}
-    <li>About Us</li>
+    
+
   </ul>
 </nav>
