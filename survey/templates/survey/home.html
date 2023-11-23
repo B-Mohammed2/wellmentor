@@ -1,11 +1,21 @@
 <!-- MODIFY THIS FOR THE HOME PAGE - WILL LATER CHANGE TO PROFILE PAGE -->
 
 {% extends 'base.html' %}
-<!--  -->
+{% load static %} 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
 {% block content %}
-<h1>Home Page</h1>
-
-  <a href="{% url 'survey' %}">Survey</a>
-  <a href="{% url 'about_us' %}">About us</a>
-</ul>
+<section>
+  <div id="hero">
+      <div id="hero-box">
+          <h1>wellmentor</h1>
+          <h2>Strength in Every Step: Walk the Journey with us!</h2>
+      </div>
+  </div>
+  <div id="survey-button">
+    <a href="{% url 'survey' %}">Survey</a>
+  </div>
+</section>
+<a href="{% url 'about_us' %}">About us</a>
 {% endblock %}
