@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   nextQuestion(DATA, TOTALINDEX);
 });
 
-async function nextQuestion(questions, index) {
-  if (questions.length <= index) {
+async function nextQuestion(data, index) {
+  if (data.length <= index) {
     const stateObject = { score: SCORE };
     window.history.pushState(stateObject, null, "survey/results");
     window.location.href = `results`;
@@ -31,7 +31,19 @@ async function nextQuestion(questions, index) {
   }
 
   console.log("second ");
-  questionText.innerHTML = `<h2>${questions[index].question}</h2>`;
+  questionText.innerHTML = `<h2>${data[index].question}</h2>`;
+
+  while (answersText.firstChild) {
+    answersText.removeChild(answersText.firstChild)
+  }
+  const answersCount = data[index].answers.length;
+  const scoreRange = 100/answersCount;
+
+  for (var n=0; n<answersCount;n++) {
+    var button = document.createElement("button");
+    button.innerHTML = data[index].answers[n];
+    answersText.appendChild(button);
+  }
 
   TOTALINDEX++;
 }
