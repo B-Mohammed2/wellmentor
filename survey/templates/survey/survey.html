@@ -9,6 +9,7 @@
 <!--  -->
 {% block content %}
 
+<div id='display'>
 <div id="question">QUESTION GOES HERE</div>
 <div id="answers">
   <button class="btn" value="1">
@@ -24,8 +25,52 @@
     <i class="fa-regular fa-face-grin-squint-tears"></i>
   </button>
 </div>
+</div>
 
-<form action="{% url 'survey' %}" method="POST">{{ form }}</form>
+{% comment %}  {% endcomment %}
+
+<form id='form' method="post" action="{% url 'survey' %}">
+  {% csrf_token %}
+  
+  <!-- Physical -->
+  <div class="form-group">
+      <label for="{{ form.physical.id_for_label }}">Physical:</label>
+      {{ form.physical }}
+  </div>
+
+  <!-- Depression -->
+  <div class="form-group">
+      <label for="{{ form.depression.id_for_label }}">Depression:</label>
+      {{ form.depression }}
+  </div>
+
+  <!-- Relationship -->
+  <div class="form-group">
+      <label for="{{ form.relationship.id_for_label }}">Relationship:</label>
+      {{ form.relationship }}
+  </div>
+
+  <!-- Professional -->
+  <div class="form-group">
+      <label for="{{ form.professional.id_for_label }}">Professional:</label>
+      {{ form.professional }}
+  </div>
+
+  <!-- Mental -->
+  <div class="form-group">
+      <label for="{{ form.mental.id_for_label }}">Mental:</label>
+      {{ form.mental }}
+  </div>
+
+  <!-- Anxiety -->
+  <div class="form-group">
+      <label for="{{ form.anxiety.id_for_label }}">Anxiety:</label>
+      {{ form.anxiety }}
+  </div>
+</form>
+
+<button id='check-results' class='hidden'>Check my results</button>
+
 
 {% endblock %} {% block postloadjs %} {{ block.super }}
 <script type="module" src="{% static 'js/survey.js' %}"></script>
