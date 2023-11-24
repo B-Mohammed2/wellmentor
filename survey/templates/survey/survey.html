@@ -22,9 +22,7 @@
   </button>
 </div>
 
-<form action="{% url 'survey' %}" method="POST" class="hidden">
-  {{ form }}
-</form>
+<form action="{% url 'survey' %}" method="POST">{{ form }}</form>
 
 {% endblock %} {% block postloadjs %} {{ block.super }}
 <script type="module" src="{% static 'js/survey.js' %}"></script>
