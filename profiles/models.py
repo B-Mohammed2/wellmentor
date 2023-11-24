@@ -13,22 +13,22 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    physical_health = models.DecimalField(
+    physical = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    depression_level = models.DecimalField(
+    depression = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    relationship_health = models.DecimalField(
+    relationship = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    professional_health = models.DecimalField(
+    professional = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    mental_health_awareness = models.DecimalField(
+    mental = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    anxiety_level = models.DecimalField(
+    anxiety = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
 
@@ -36,42 +36,41 @@ class UserProfile(models.Model):
     def __str__(self):
         return str(self.user)
 
-    def calculate_physical_health(self):
+    def calculate_physical_level(self):
         calculated_value = 10 * 10
-        self.physical_health = calculated_value
+        self.physical = calculated_value
         self.save()
         return calculated_value
 
     def calculate_depression_level(self):
         calculated_value = 10 * 10
-        self.physical_health = calculated_value
+        self.depression = calculated_value
         self.save()
         return calculated_value
 
-    def calculate_relationship_health(self):
+    def calculate_relationship_level(self):
         calculated_value = 10 * 10
-        self.social_health = calculated_value
+        self.relationship = calculated_value
         self.save()
-        calculated_value = 10 * 10
         return calculated_value
 
-    def calculate_professional_health(self):
+    def calculate_professional_level(self):
         calculated_value = 10 * 10
-        self.professional_health = calculated_value
+        self.professional = calculated_value
         self.save()
 
         return calculated_value
 
-    def calculate_mental_health_awareness(self):
+    def calculate_mental_level(self):
         calculated_value = 10 * 10
-        self.professional_health = calculated_value
+        self.mental = calculated_value
         self.save()
 
         return calculated_value
 
     def calculate_anxiety_level(self):
         calculated_value = 10 * 10
-        self.emotional_health = calculated_value
+        self.anxiety = calculated_value
         self.save()
         return calculated_value
 

@@ -9,14 +9,17 @@
 
 {% block content %}
 <section>
-    <div id="hero">
-        <div id="hero-box">
-            <h2>Strength in every step: walk the journey with us!</h2>
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold" style="color: #CD2A51; -webkit-text-stroke: 1.5px #fff; font-size: 80px">wellmentor</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4" style="font-size: 40px; color: #FAC041;">Strength in Every Step: Walk the Journey to Wellness</p>
+            </div>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <div id="survey-button">
+                <a href="{% url 'survey' %}">Start the Survey!</a>
+            </div>
         </div>
-        <div id="survey-button">
-          <a href="{% url 'survey' %}">Survey</a>
-        </div>
-        <a href="{% url 'about_us' %}">About us</a>
     </div>
+  </div>
 </section>
 {% endblock %}
