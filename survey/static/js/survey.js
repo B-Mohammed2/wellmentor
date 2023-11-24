@@ -7,6 +7,8 @@ const answersText = document.getElementById("answers");
 const answersBtns = answersText.querySelectorAll(".btn");
 const display = document.getElementById("display");
 const score = document.querySelector("score");
+const form = document.getElementById("form");
+const checkResultsBtn = document.getElementById("check-results");
 
 let TOTALINDEX = 0;
 let SCORE = {
@@ -22,12 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
   nextQuestion(DATA, TOTALINDEX);
 });
 
+function submitForm() {}
+
 async function nextQuestion(data, index) {
   if (data.length <= index) {
-    const stateObject = { score: SCORE };
-    window.history.pushState(stateObject, null, "/results");
-    window.location.href = `/results`;
-
+    document.getElementById("id_physical").value = SCORE.physical;
+    document.getElementById("id_depression").value = SCORE.depression;
+    document.getElementById("id_relationship").value = SCORE.relationships;
+    document.getElementById("id_professional").value = SCORE.professional;
+    document.getElementById("id_mental").value = SCORE.mental;
+    document.getElementById("id_anxiety").value = SCORE.anxiety;
+    display.innerHTML = "";
+    checkResultsBtn.classList.remove("hidden");
+    submitForm();
     return;
   }
 
@@ -36,7 +45,6 @@ async function nextQuestion(data, index) {
   answersText.innerHTML = "";
 
   const answersCount = data[index].answers.length;
-  const scoreRange = 100 / answersCount;
 
   for (var n = 0; n < answersCount; n++) {
     var button = document.createElement("button");
@@ -65,3 +73,5 @@ function storeAnswer(e, category) {
 answersBtns.forEach((button) => {
   button.addEventListener("click", (e) => storeAnswer(e));
 });
+
+checkResultsBtn.addEventListener("click", () => form.submit());
