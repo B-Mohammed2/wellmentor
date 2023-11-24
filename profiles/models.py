@@ -16,13 +16,19 @@ class UserProfile(models.Model):
     physical_health = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    social_health = models.DecimalField(
+    depression_level = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0,
+        validators=[MinValueValidator(0), MaxValueValidator(100)])
+    relationship_health = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
     professional_health = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
-    emotional_health = models.DecimalField(
+    mental_health_awareness = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0,
+        validators=[MinValueValidator(0), MaxValueValidator(100)])
+    anxiety_level = models.DecimalField(
         max_digits=5, decimal_places=2, default=0,
         validators=[MinValueValidator(0), MaxValueValidator(100)])
 
@@ -36,7 +42,13 @@ class UserProfile(models.Model):
         self.save()
         return calculated_value
 
-    def calculate_social_health(self):
+    def calculate_depression_level(self):
+        calculated_value = 10 * 10
+        self.physical_health = calculated_value
+        self.save()
+        return calculated_value
+
+    def calculate_relationship_health(self):
         calculated_value = 10 * 10
         self.social_health = calculated_value
         self.save()
@@ -50,7 +62,14 @@ class UserProfile(models.Model):
 
         return calculated_value
 
-    def calculate_emotional_health(self):
+    def calculate_mental_health_awareness(self):
+        calculated_value = 10 * 10
+        self.professional_health = calculated_value
+        self.save()
+
+        return calculated_value
+
+    def calculate_anxiety_level(self):
         calculated_value = 10 * 10
         self.emotional_health = calculated_value
         self.save()
