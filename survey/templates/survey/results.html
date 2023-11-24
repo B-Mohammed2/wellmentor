@@ -4,12 +4,20 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/survey.css' %}" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 {% endblock %}
 {% block extra_title %}Results{%endblock %}
 
 <!--  -->
 {% block content %}
 
+<h1 class="results">Results</h1>
+<div class="container">
+    <div class="row">
+
+    </div>
+</div>
+<!-- 
 <div>
   <h1>Results</h1>
   <div id="score" class="grid-container">
@@ -38,10 +46,11 @@
       <span id="mental"></span>
     </div>
   </div>
-</div>
+</div> -->
 
 {% endblock %} 
 
 {% block postloadjs %} {{ block.super }}
+<script src="https://d3js.org/d3.v4.js"></script>
 <script type="text/javascript" src="{% static 'js/results.js' %}"></script>
 {% endblock %}
