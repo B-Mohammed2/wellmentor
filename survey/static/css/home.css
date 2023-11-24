@@ -3,24 +3,71 @@ main {
   background-size: cover;
 }
 
+
 #hero-box {
     font-size: 120%;
     letter-spacing: 4px;
     text-align: center;
-    color: white;
+    color: #fff;
     width: 40%;
     height: 25%;
     padding: 1% 1% 1% 1%;
     border-radius: 25px;
     margin: auto;
     background-clip: padding-box;
-    background-color: #ce3d5e;
+    background-color: #CD2A51;
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
- 
+
+/* Navbar */
+
+nav{
+    display: flex;
+    padding: 2% 4%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav{
+    flex: 1;
+    text-align: right;
+}
+
+#main-nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+#main-nav ul li a{
+    color: #ce3d5e;
+    text-decoration: none;
+    font-size: 26px;
+
+}
+
+#main-nav li::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #1F70F3;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+
+.nav-links ul li:hover::after{
+    width: 10%;
+}
+
+/* Navbar finished*/
+
+
 #survey-button {
     margin-top: 20px;
   }
@@ -29,14 +76,34 @@ main {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
-    color: #ce3d5e;
+    color: #CD2A51;
     background-color: #FAC041;
-    border: 2px solid #a5656f;
+    border: 2px solid #865527;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
 #survey-button a:hover {
     background-color: #fff;
-    color: #000;
+    color: #ce3d5e;
   }
+
+
+/* Footer */
+#social-networks {
+    text-align: center;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    border-box: 0 2px 2px inset #a5656f;
+}
+
+#social-networks i {
+    font-size: 160%;
+    padding: 5%;
+    color: #ce3d5e;
+    background-color: #1F70F3;
+}
+
+
