@@ -11,12 +11,20 @@
   const score = {{ form_data|safe }};
 </script>
 
+
+{% if form_data %}
 <div class="wrapper">
   <h1 class="results">Results</h1>
   <div class="container">
     <div class="row"></div>
   </div>
 </div>
+
+{% else %}
+
+<a href="{% url 'survey' %}">Start the Survey!</a>
+
+{% endif %}
 <!-- 
 <div>
   <h1>Results</h1>
